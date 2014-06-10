@@ -280,6 +280,11 @@ function draw(topo) {
   .on("click",  function(d,i) {
     tooltip.classed("hidden", true); 
     var i = d.id;  
+    if ( cities[i] === undefined) {
+    cities[i] = 75;
+} 
+  
+    console.log(cities[i]);  
     window.location.href = window.top.location.href = "http://redplanetacolombia.com/redPlaneta/index.php/contienentes/viewgroup/"+cities[i]; 
   }); 
   $.getJSON( "http://smart-ip.net/geoip-json?callback=?",
